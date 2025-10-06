@@ -1,0 +1,2 @@
+- Run `pnpm lint:fix` to format and lint the code.
+- Run `pnpm test` to ensure all tests pass.

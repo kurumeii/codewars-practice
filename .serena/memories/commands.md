@@ -1,0 +1,5 @@
+- `pnpm install`: Install dependencies.
+- `pnpm build`: Compile TypeScript code.
+- `pnpm test`: Run tests with Jest.
+- `pnpm lint`: Lint code with Biome.
+- `pnpm lint:fix`: Lint and fix code with Biome.
