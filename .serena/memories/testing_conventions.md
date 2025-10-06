@@ -6,6 +6,7 @@ All test files follow a consistent pattern based on the existing codebase:
 
 ### Standard Template
 ```typescript
+import { describe, expect, it } from "@jest/globals";
 import { functionName } from "./solution";
 
 describe("Basic test for [problem name]", () => {
