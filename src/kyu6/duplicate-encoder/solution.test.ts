@@ -1,3 +1,4 @@
+import { describe, it, expect } from "@jest/globals";
 import { duplicateEncoder } from "./solution";
 
 describe("Basic test for duplicate encoder", () => {
@@ -15,4 +16,3 @@ describe("Basic test for duplicate encoder", () => {
 		});
 	});
 });
-

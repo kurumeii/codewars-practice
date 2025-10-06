@@ -1,26 +1,28 @@
 {
-  "name": "practice",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "tsc",
-    "test": "jest",
-    "lint": "pnpm biome lint .",
-    "lint:fix": "pnpm biome lint --apply ."
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
-  "packageManager": "pnpm@10.15.0",
-  "devDependencies": {
-    "@biomejs/biome": "^2.2.5",
-    "@types/jest": "^30.0.0",
-    "@types/node": "^24.6.2",
-    "jest": "^30.2.0",
-    "ts-jest": "^29.4.4",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
-  }
+	"name": "practice",
+	"version": "1.0.0",
+	"description": "",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "tsc",
+		"test": "jest",
+		"lint": "biome lint .",
+		"lint:fix": "biome lint --fix .",
+		"clean": "biome format --write ."
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "module",
+	"packageManager": "pnpm@10.15.0",
+	"devDependencies": {
+		"@biomejs/biome": "^2.2.5",
+		"@jest/globals": "^30.2.0",
+		"@types/jest": "^30.0.0",
+		"@types/node": "^24.6.2",
+		"jest": "^30.2.0",
+		"ts-jest": "^29.4.4",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.9.3"
+	}
 }
