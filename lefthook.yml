@@ -3,3 +3,7 @@ pre-commit:
     biome:
       glob: "*.{js,ts,jsx,tsx,json}"
       run: pnpm biome lint --fix {staged_files} && git add {staged_files}
+commit-msg:
+  commands:
+    conventional-commit:
+      run: 'grep -qE "^(feat|fix|chore|docs|style|refactor|perf|test)\([a-z-]+\): .+" {1} || (echo "Error: Commit message does not follow conventional commits format." && exit 1)'
