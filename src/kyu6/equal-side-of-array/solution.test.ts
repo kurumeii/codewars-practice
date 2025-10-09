@@ -14,7 +14,7 @@ describe("Basic test for equal sides of array", () => {
 		{ input: [0, 0, 0, 0, 0], output: 0, note: "all zeros" },
 		{ input: [1, 0, 1], output: 1 },
 		{ input: [-1, -2, -3, -4, -3, -2, -1], output: 3 },
-		{ input: [5, 0, -5], output: 1 },
+		{ input: [5, 0, -5], output: -1 },
 	];
 
 	testCases.forEach(({ input, output, note }) => {
