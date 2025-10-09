@@ -1,27 +1,20 @@
-const task = {
-	sumOfOwnDigits: (input: number) => {
-		let sum = Array.from(input.toString()).reduce(
-			(prev, cur) => prev + parseInt(cur),
-			0
-		);
-		if (sum > 9) {
-			sum = task.sumOfOwnDigits(sum);
-		}
-		return sum;
-	},
-	first: (input: string[]) =>
-		input
-			.reverse()
-			.map((v, i) => (i % 2 === 1 ? parseInt(v) * 2 : parseInt(v)))
-			.reverse(),
-	second: (input: number[]) =>
-		input.map((v) => (v > 9 ? task.sumOfOwnDigits(v) : v)),
-	handle: (input: string[]) =>
-		task.second(task.first(input)).reduce((prev, curr) => prev + curr, 0) %
-			10 ===
-		0,
-};
-
 export function validate(input: number) {
-	return task.handle(Array.from(input.toString()));
+	function getDigitSum(num: number): number {
+		const sum = [...String(num)].reduce((acc, digit) => acc + Number(digit), 0);
+		return sum > 9 ? getDigitSum(sum) : sum;
+	}
+	function doubleEveryOtherDigit(digits: string[]): number[] {
+		return digits
+			.reverse()
+			.map((digit, index) =>
+				index % 2 === 1 ? Number(digit) * 2 : Number(digit)
+			)
+			.reverse();
+	}
+	const processedDigits = doubleEveryOtherDigit([...String(input)]);
+	const summedDigits = processedDigits.map((num) =>
+		num > 9 ? getDigitSum(num) : num
+	);
+	const total = summedDigits.reduce((acc, num) => acc + num, 0);
+	return total % 10 === 0;
 }
